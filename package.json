@@ -40,7 +40,6 @@
     "@material-ui/icons": "^3.0.2",
     "boom": "^7.3.0",
     "hapi": "^18.1.0",
-    "hapi-mongodb": "^8.0.0",
     "hapi-mongoose": "^2.0.0",
     "mongoose": "^5.4.19",
     "react": "^16.8.4",
