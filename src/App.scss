@@ -1,0 +1,15 @@
+$primary-color: #333;
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary-color;
+}
+
+.Content-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 240px;
+  width: 100%;
+  height: 100%;
+}

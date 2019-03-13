@@ -55,9 +55,12 @@ const styles = theme => ({
 });
 
 class MiniDrawer extends React.Component {
-  state = {
-    open: true,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: true,
+    };
+  }
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
@@ -88,32 +91,21 @@ class MiniDrawer extends React.Component {
           open={this.state.open}
         >
           <List>
-            <ListItem button key={'Home'}>
+            <ListItem button key={'Home'} onClick={ () => this.props.message('home') }>
                 <ListItemIcon><DashboardIcon /></ListItemIcon>
                 <ListItemText primary={'Home'} />
             </ListItem>
-            <ListItem button key={'Projects'}>
+            <ListItem button key={'Projects List'} onClick={ () => this.props.message('project_list') }>
                 <ListItemIcon><FolderIcon /></ListItemIcon>
-                <ListItemText primary={'Projects'} />
+                <ListItemText primary={'Projects List'} />
             </ListItem>
-            <ListItem button key={'Community'}>
+            <ListItem button key={'Projects Detail'} onClick={ () => this.props.message('project_detail') }>
+                <ListItemIcon><FolderIcon /></ListItemIcon>
+                <ListItemText primary={'Projects Detail'} />
+            </ListItem>
+            <ListItem button key={'Community'} onClick={ () => this.props.message('user_profile') }>
                 <ListItemIcon><PeopleIcon /></ListItemIcon>
                 <ListItemText primary={'Community'} />
-            </ListItem>
-          </List>
-          <Divider />
-          <List>
-            <ListItem button key={'Settings'}>
-                <ListItemIcon><SettingsIcon /></ListItemIcon>
-                <ListItemText primary={'Settings'} />
-            </ListItem>
-            <ListItem button key={'Account'}>
-                <ListItemIcon><AccountIcon /></ListItemIcon>
-                <ListItemText primary={'Account'} />
-            </ListItem>
-            <ListItem button key={'Help'}>
-                <ListItemIcon><HelpIcon /></ListItemIcon>
-                <ListItemText primary={'Help'} />
             </ListItem>
           </List>
         </Drawer>
