@@ -1,8 +1,6 @@
 'use strict'
 
 const Hapi = require('hapi');
-const Boom = require('boom');
-const Mongoose = require('mongoose');
 const initDb = require('./initDb');
 
 const launchServer = async function() {
@@ -19,32 +17,9 @@ const launchServer = async function() {
     options: options
   });
 
-  const {Collaborator, Event, Project} = await initDb(server);
+  const db = await initDb(server);
 
-  server.route([
-    {
-      method: 'GET',
-      path: '/api/socialfeed',
-      handler: async function (request, h) {
-        try {
-          return await Event.find({});
-        } catch (err) {
-          throw Boom.internal('Internal MongoDB error', err);
-        }
-      }
-    },
-    {
-      method: 'GET',
-      path: '/api/socialfeed/{id}',
-      handler: async function (request, h) {
-        try {
-          return await Event.findOne({ _id: new Mongoose.Types.ObjectId(request.params.id) });
-        } catch (err) {
-          throw Boom.internal('Internal MongoDB error', err);
-        }
-      }
-    }
-  ])
+  server.route(require('./routes')(db))
 
   await server.start()
 

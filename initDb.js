@@ -28,32 +28,32 @@ module.exports = async function(server) {
     const Project = db.model('Project', ProjectSchema);
     const Event = db.model('Event', EventSchema);
 
-    const events = [];
-    const collaborators = [];
-    const projects = [];
+    // const events = [];
+    // const collaborators = [];
+    // const projects = [];
 
-    data.forEach((event) => {
-      if (event.project) {
-        if (event.project.collaborators) {
-          event.project.collaborators.forEach((collaborator) => {
-            collaborators.push(new Collaborator(collaborator));
-          })
-        }
-        projects.push(new Project(event.project))
-      }
-      if (event.followed_user) {
-        collaborators.push(new Collaborator(event.followed_user))
-      }
-      events.push(new Event(event));
-    });
+    // data.forEach((event) => {
+    //   if (event.project) {
+    //     if (event.project.collaborators) {
+    //       event.project.collaborators.forEach((collaborator) => {
+    //         collaborators.push(new Collaborator(collaborator));
+    //       })
+    //     }
+    //     projects.push(new Project(event.project))
+    //   }
+    //   if (event.followed_user) {
+    //     collaborators.push(new Collaborator(event.followed_user))
+    //   }
+    //   events.push(new Event(event));
+    // });
 
-    await Collaborator.remove({});
-    await Project.remove({});
-    await Event.remove({});
+    // await Collaborator.remove({});
+    // await Project.remove({});
+    // await Event.remove({});
 
-    await Collaborator.insertMany(collaborators);
-    await Project.insertMany(projects);
-    await Event.insertMany(events);
+    // await Collaborator.insertMany(collaborators);
+    // await Project.insertMany(projects);
+    // await Event.insertMany(events);
 
     return {
       Collaborator,
