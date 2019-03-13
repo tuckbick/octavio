@@ -36,7 +36,8 @@ class App extends Component {
   }
 
   handleLogin() {
-    this.setState({ ui_state: {is_logged_in: true} })
+    this.setState({ ui_state: {is_logged_in: true} });
+    this.setState({ which_page: 'home' });
   }
 
   render() {
