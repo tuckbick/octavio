@@ -14,6 +14,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrowOutlined';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
 import Input from '@material-ui/core/Input';
 import Avatar from './Avatar';
+import ProjectAvatar from './ProjectAvatar';
 
 class App extends Component {
   constructor() {
@@ -99,6 +100,7 @@ class App extends Component {
             <Input
               className="login-input"
               placeholder="first name"
+              value="jromeem"
               inputProps={{
                 'aria-label': 'Description',
               }}
@@ -106,6 +108,7 @@ class App extends Component {
             <Input
               className="login-input"
               placeholder="last name"
+              value="********"
               inputProps={{
                 'aria-label': 'Description',
               }}
@@ -117,14 +120,11 @@ class App extends Component {
               type="file"
               className="hidden"
             />
-            <label htmlFor="text-button-file">
-              <Button className="upload-picture-button" component="span">
-                picture
+            <label>
+              <Button onClick={ this.handleLogin } className="login-button" component="span">
+                login
               </Button>
             </label>
-            <Button onClick={ this.handleLogin } className="login-button" component="span">
-              login
-            </Button>
           </div>
         </div>
       </div>
@@ -211,10 +211,10 @@ class App extends Component {
 
   renderProjectsListPage() {
     return (
-      <div className="ProjectDetail-contain">
+      <div className="ProjectList-contain">
         <section className="section-1">
           <div className="title-section">
-            project list
+            your projects
           </div>
           <div className="buttons">
             <Fab size="small" aria-label="Add" onClick={() => this.setState({ which_page: 'project_create' }) }>
@@ -226,10 +226,60 @@ class App extends Component {
           <div className="details-content">
             <div className="social-feed">
               <div className="line-down"/>
-              <div className="social-item">
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
                 <div className="circle" />
+                <ProjectAvatar src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Adele_-_21.png/220px-Adele_-_21.png" />
                 <div className="social-text">
-                  project 1
+                  <strong>Rolling in the Deep</strong><br /><em>Updated 1 days ago by <strong>Roxie Massey</strong></em>
+                </div>
+              </div>
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
+                <div className="circle" />
+                <ProjectAvatar src="https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Lady_Gaga_-_Poker_Face.png/220px-Lady_Gaga_-_Poker_Face.png" />
+                <div className="social-text">
+                  <strong>Poker Face</strong><br /><em>Updated 2 days ago by <strong>Stefani Germanotta</strong></em>
+                </div>
+              </div>
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
+                <div className="circle" />
+                <ProjectAvatar src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/First_Day_of_My_Life.jpg/220px-First_Day_of_My_Life.jpg" />
+                <div className="social-text">
+                  <strong>First Day of My Life</strong><br /><em>Updated 2 days ago by <strong>George Harrison</strong></em>
+                </div>
+              </div>
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
+                <div className="circle" />
+                <ProjectAvatar src="https://m.media-amazon.com/images/I/91A1Y+bfQ+L._SS500_.jpg" />
+                <div className="social-text">
+                  <strong>A-Punk</strong><br /><em>Updated 7 days ago by <strong>Ryan Beatty</strong></em>
+                </div>
+              </div>
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
+                <div className="circle" />
+                <ProjectAvatar src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Franz_Ferdinand_-_Take_Me_Out.jpg/220px-Franz_Ferdinand_-_Take_Me_Out.jpgg" />
+                <div className="social-text">
+                  <strong>Take Me Out</strong><br /><em>Updated 9 days ago by <strong>Leon Fernandez</strong></em>
+                </div>
+              </div>
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
+                <div className="circle" />
+                <ProjectAvatar src="https://upload.wikimedia.org/wikipedia/en/thumb/7/77/PB%26Jyoung_folks.JPG/220px-PB%26Jyoung_folks.JPG" />
+                <div className="social-text">
+                  <strong>Young Folks</strong><br /><em>Updated 16 days ago by <strong>Luna Osborn</strong></em>
+                </div>
+              </div>
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
+                <div className="circle" />
+                <ProjectAvatar src="https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2F43c401bc0dab23d4711c38e529cab649.1000x1000x1.jpg" />
+                <div className="social-text">
+                  <strong>Bruise</strong><br /><em>Updated 23 days ago by <strong>Mark Mcguire</strong></em>
+                </div>
+              </div>
+              <div className="social-item" onClick={() => this.setState({ which_page: 'project_detail' })}>
+                <div className="circle" />
+                <ProjectAvatar src="https://yt3.ggpht.com/a-/AAuE7mCRncce1E2uIbJbrlLEqhboixAZ_86TcrCEXw=s900-mo-c-c0xffffffff-rj-k-no" />
+                <div className="social-text">
+                  <strong>Camo</strong><br /><em>Updated 25 days ago by <strong>Melinda Goodman</strong></em>
                 </div>
               </div>
             </div>
@@ -244,7 +294,7 @@ class App extends Component {
       <div className="ProjectDetail-contain">
         <section className="section-1">
           <div className="title-section">
-          rmassey / rolling in the deep
+          aadkins / rolling in the deep
           </div>
           <div className="buttons">
             <Fab size="small" aria-label="Add" className="download-button">
