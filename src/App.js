@@ -61,7 +61,21 @@ class App extends Component {
           social feed
         </div>
         <div className="details-content">
-          discussion content
+          <div className="social-feed">
+            <div className="line-down"/>
+            <div className="social-item">
+              <div className="circle" />
+              <div class="social-text">
+                Someone followed Someone Else
+              </div>
+            </div>
+            <div className="social-item">
+              <div className="circle" />Someone starred This Project
+            </div>
+            <div className="social-item">
+              <div className="circle" />Someone contributed to This Project
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -84,11 +98,21 @@ class App extends Component {
           project list
         </div>
         <div className="details-content">
-          <ul>
-          <li>project 1</li>
-          <li>project 2</li>
-          <li>project 3</li>
-          </ul>
+          <div className="social-feed">
+            <div className="line-down"/>
+            <div className="social-item">
+              <div className="circle" />
+              <div class="social-text">
+                project 1
+              </div>
+            </div>
+            <div className="social-item">
+              <div className="circle" />project 2
+            </div>
+            <div className="social-item">
+              <div className="circle" />project 3
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -136,7 +160,21 @@ class App extends Component {
         </section>
         <section className="section-4">
           <div className="details-content">
-            discussion content
+            <div className="social-feed">
+              <div className="line-down"/>
+              <div className="social-item">
+                <div className="circle" />
+                <div class="social-text">
+                  hisotry item 1
+                </div>
+              </div>
+              <div className="social-item">
+                <div className="circle" />history item 2
+              </div>
+              <div className="social-item">
+                <div className="circle" />history item 3
+              </div>
+            </div>
           </div>
         </section>
       </div>
