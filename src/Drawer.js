@@ -95,19 +95,19 @@ class MiniDrawer extends React.Component {
           <List disablePadding="true">
             <ListItem className="list-item" button key={'Home'} onClick={ () => this.props.message('home') }>
                 <ListItemIcon><HomeIcon className="side-icon" fontSize='large'/></ListItemIcon>
-                <ListItemText className="side-nav-text" primary={'Home'} />
+                <ListItemText className="side-nav-text" primary={'home'} />
             </ListItem>
             <ListItem className="list-item" button key={'Projects List'} onClick={ () => this.props.message('project_list') }>
                 <ListItemIcon><FolderIcon className="side-icon" fontSize='large'/></ListItemIcon>
-                <ListItemText className="side-nav-text" primary={'Projects List'} />
+                <ListItemText className="side-nav-text" primary={'projects List'} />
             </ListItem>
             <ListItem className="list-item" button key={'Projects Detail'} onClick={ () => this.props.message('project_detail') }>
                 <ListItemIcon><FolderIcon className="side-icon" fontSize='large'/></ListItemIcon>
-                <ListItemText className="side-nav-text" primary={'Projects Detail'} />
+                <ListItemText className="side-nav-text" primary={'projects Detail'} />
             </ListItem>
             <ListItem className="list-item" button key={'Community'} onClick={ () => this.props.message('user_profile') }>
                 <ListItemIcon><PeopleIcon className="side-icon" fontSize='large'/></ListItemIcon>
-                <ListItemText className="side-nav-text" primary={'Community'} />
+                <ListItemText className="side-nav-text" primary={'community'} />
             </ListItem>
           </List>
         </Drawer>

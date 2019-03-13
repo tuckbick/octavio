@@ -145,7 +145,7 @@ class App extends Component {
 
   displayBars() {
     let barElems = [];
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 300; i++) {
       let heightComputed = Math.floor(Math.random() * 35) + 25;
       if (i === 0 || i === 100) {
         heightComputed = 20;
