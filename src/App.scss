@@ -144,7 +144,8 @@ button {
       left: 39px;
       min-width: 2px;
       background-color: #000;
-      height: 100vh;
+      min-height: 100vh;
+      height: 100%;
       z-index: 11;
     }
     .social-item {

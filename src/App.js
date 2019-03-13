@@ -285,18 +285,18 @@ class App extends Component {
             <div className="social-feed">
               <div className="line-down"/>
               <div className="social-item">
-                <div className="circle" /><span><strong>Murphy Nolan</strong> added a file</span>
+                <div className="circle" /><span><strong>Murphy Nolan</strong> added a <strong>file</strong></span>
               </div>
               <div className="social-item">
-                <div className="circle" /><span><strong>Roxie Massey</strong> added a file</span>
+                <div className="circle" /><span><strong>Roxie Massey</strong> added a <strong>file</strong></span>
 
               </div>
               <div className="social-item">
-                <div className="circle" /><span><strong>Roxie Massey</strong> made a comment:</span>
+                <div className="circle" /><span><strong>Roxie Massey</strong> made a <strong>comment</strong>:</span>
                 <p>&nbsp;<i>wow this is great!</i></p>
               </div>
               <div className="social-item">
-                <div className="circle" /><span><strong>Roxie Massey</strong> added a file</span>
+                <div className="circle" /><span><strong>Roxie Massey</strong> added a <strong>file</strong></span>
               </div>
             </div>
 
