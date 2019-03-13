@@ -87,6 +87,23 @@ class App extends Component {
         <div className="title-section">
           user profile
         </div>
+          <div className="details-content">
+            <div className="social-feed">
+              <div className="line-down"/>
+              <div className="social-item">
+                <div className="circle" />
+                <div class="social-text">
+                  user 1
+                </div>
+              </div>
+              <div className="social-item">
+                <div className="circle" />user 2
+              </div>
+              <div className="social-item">
+                <div className="circle" />user 3
+              </div>
+            </div>
+          </div>
       </div>
     );
   }
@@ -139,7 +156,7 @@ class App extends Component {
         </section>
         <section className="section-2">
           <div className="playback-ui">
-            <Fab size="xl" color="primary" aria-label="Add" className="play-button">
+            <Fab size="xl" aria-label="Add" className="play-button">
               <PlayArrowIcon fontSize="large" />
             </Fab>
             { this.displayBars() }

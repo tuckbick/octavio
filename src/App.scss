@@ -67,7 +67,7 @@ button {
 .details-content {
   position: relative;
   border: 2px solid #000;
-  min-height: 50vh;
+  min-height: 10vh;
   padding: 20px;
   overflow: hidden;
 
@@ -75,7 +75,7 @@ button {
     .line-down {
       position: absolute;
       top: 0px;
-      left: 44px;
+      left: 39px;
       min-width: 2px;
       background-color: #000;
       height: 100vh;
@@ -87,8 +87,8 @@ button {
       margin-bottom: 20px;
       height: 50px;
       .circle {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         border: 2px solid #000;
         margin: 0px 10px;
@@ -99,7 +99,9 @@ button {
       .social-text {
       }
       &:hover {
-        .social-item { background-color: #ccc; }
+        cursor: pointer;
+        background-color: #ccc;
+        // border: 2px solid #000;
         .circle { background-color: #ccc; }
       }
     }
@@ -132,7 +134,8 @@ button {
       border: 2px solid #000;
       display: flex;
       align-items: center;
-      .playback-button {
+      .play-button {
+        width: 80px;
         flex-grow: 1;
       }
       .all-bars {
@@ -145,7 +148,8 @@ button {
         overflow: hidden;
         .single-bar {
           margin: 2px;
-          min-width: 3px;
+          min-width: 2px;
+          border-radius: 2px;
           background-color: #000;
         }
       }
