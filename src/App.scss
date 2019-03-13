@@ -1,4 +1,5 @@
 $primary-color: #fff;
+$polka-color: #ffa0c5;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather";
@@ -22,30 +23,10 @@ button {
   &:hover {
     background-color: #fff !important;
     background-image:
-      radial-gradient(#f9aa33 20%, transparent 0), 
-      radial-gradient(#f9aa33 20%, transparent 0);
-    background-size: 5px 5px;
-    background-position: 0 0, 15px 15px;
-
-    -webkit-animation: AnimationName 25s ease infinite;
-    -moz-animation: AnimationName 25s ease infinite;
-    animation: AnimationName 25s ease infinite;
-
-    @-webkit-keyframes AnimationName {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 25%}
-        100%{background-position:0% 50%}
-    }
-    @-moz-keyframes AnimationName {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @keyframes AnimationName { 
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
+          radial-gradient($polka-color 25%, transparent 0), 
+          radial-gradient($polka-color 25%, transparent 0);
+        background-size: 4px 4px;
+        background-position: 0 0, 15px 15px;
   }
 }
 .hidden {
@@ -194,10 +175,12 @@ button {
       .social-text {
       }
       &:hover {
-        cursor: pointer;
-        background-color: #ccc;
-        // border: 2px solid #000;
-        .circle { background-color: #ccc; }
+        background-color: #fff !important;
+        background-image:
+          radial-gradient($polka-color 25%, transparent 0), 
+          radial-gradient($polka-color 25%, transparent 0);
+        background-size: 4px 4px;
+        background-position: 0 0, 15px 15px;
       }
     }
   }
