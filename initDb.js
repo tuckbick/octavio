@@ -5,55 +5,60 @@ module.exports = async function(server) {
     const db = server.plugins["hapi-mongoose"].connection;
 
     const CollaboratorSchema = new Mongoose.Schema({
-      id: String,
+      _id: Mongoose.Schema.Types.ObjectId,
       first_name: String,
       last_name: String,
       picture: String
     })
+    const Collaborator = db.model('Collaborator', CollaboratorSchema);
 
     const ProjectSchema = new Mongoose.Schema({
-      id: String,
-      collaborators: [CollaboratorSchema],
+      _id: Mongoose.Schema.Types.ObjectId,
+      collaborators: [{type: Mongoose.Schema.Types.ObjectId, ref: 'Collaborator'}],
       name: String
     })
+    ProjectSchema.pre('find', function(next) {
+      this.populate('collaborators')
+      next();
+    })
+    const Project = db.model('Project', ProjectSchema);
 
     const EventSchema = new Mongoose.Schema({
-      feed_user_id: String,
+      feed_user_id: {type: Mongoose.Schema.Types.ObjectId, ref: 'Collaborator'},
       feed_action: String,
-      project: ProjectSchema,
-      followed_user: CollaboratorSchema
+      project: {type: Mongoose.Schema.Types.ObjectId, ref: 'Project'},
+      followed_user: {type: Mongoose.Schema.Types.ObjectId, ref: 'Collaborator'}
     })
-
-    const Collaborator = db.model('Collaborator', CollaboratorSchema);
-    const Project = db.model('Project', ProjectSchema);
+    EventSchema.pre('find', function(next) {
+      this.populate('feed_user_id')
+      this.populate('project')
+      this.populate('followed_user')
+      next();
+    })
     const Event = db.model('Event', EventSchema);
 
-    // const events = [];
-    // const collaborators = [];
-    // const projects = [];
+    const collaborators = [];
+    data.collaborators.forEach((collaborator) => {
+      collaborators.push(new Collaborator(collaborator));
+    });
 
-    // data.forEach((event) => {
-    //   if (event.project) {
-    //     if (event.project.collaborators) {
-    //       event.project.collaborators.forEach((collaborator) => {
-    //         collaborators.push(new Collaborator(collaborator));
-    //       })
-    //     }
-    //     projects.push(new Project(event.project))
-    //   }
-    //   if (event.followed_user) {
-    //     collaborators.push(new Collaborator(event.followed_user))
-    //   }
-    //   events.push(new Event(event));
-    // });
+    const projects = [];
+    data.projects.forEach((project) => {
+      projects.push(new Project(project));
+    });
 
-    // await Collaborator.remove({});
-    // await Project.remove({});
-    // await Event.remove({});
+    const events = [];
+    data.events.forEach((event) => {
+      events.push(new Event(event));
+    });
 
-    // await Collaborator.insertMany(collaborators);
-    // await Project.insertMany(projects);
-    // await Event.insertMany(events);
+    await Collaborator.remove({});
+    await Project.remove({});
+    await Event.remove({});
+
+    await Collaborator.insertMany(collaborators);
+    await Project.insertMany(projects);
+    await Event.insertMany(events);
 
     return {
       Collaborator,

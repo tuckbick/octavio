@@ -21,8 +21,6 @@ const launchServer = async function() {
 
   server.route(require('./routes')(db))
 
-  await server.start()
-
   await server.start();
   console.log(`Server started at ${server.info.uri}`);
 };

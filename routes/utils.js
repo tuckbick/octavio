@@ -7,7 +7,7 @@ module.exports = {
         method: 'GET',
         path: `/api/${name}`,
         handler: async function (request, h) {
-          return await Model.find({});
+          return await Model.find(request.query);
         }
       },
       {
@@ -29,6 +29,13 @@ module.exports = {
         path: `/api/${name}/{id}`,
         handler: async function (request, h) {
           return await Model.findByIdAndUpdate(request.params.id, JSON.parse(request.payload)).exec();
+        }
+      },
+      {
+        method: 'DELETE',
+        path: `/api/${name}/{id}`,
+        handler: async function (request, h) {
+          return await Model.deleteOne({ _id: new Mongoose.Types.ObjectId(request.params.id) }).exec();
         }
       }
     ]
