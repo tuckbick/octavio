@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopBar from './TopBar';
+import Drawer from './Drawer';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TopBar />
+        <Drawer theme={this.props.theme} />
       </div>
     );
   }
