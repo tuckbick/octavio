@@ -9,6 +9,7 @@ import RepeatIcon from '@material-ui/icons/Repeat';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Button from '@material-ui/core/Button';
 import PlayArrowIcon from '@material-ui/icons/PlayArrowOutlined';
+import HomeIcon from '@material-ui/icons/HomeOutlined';
 
 class App extends Component {
   constructor() {
@@ -85,13 +86,13 @@ class App extends Component {
           username / project-name
           </div>
           <div className="buttons">
-            <Fab size="small" color="primary" aria-label="Add" className="download-button">
+            <Fab size="small" aria-label="Add" className="download-button">
               <SaveAltIcon />
             </Fab>
-            <Fab size="small" color="secondary" aria-label="Add" className="download-button">
+            <Fab size="small" aria-label="Add" className="download-button">
               <RepeatIcon />
             </Fab>
-            <Fab size="small" color="secondary" aria-label="Add">
+            <Fab size="small" aria-label="Add">
               <StarIcon />
             </Fab>
           </div>

@@ -15,6 +15,7 @@ import HelpIcon from '@material-ui/icons/HelpOutline';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import HomeIcon from '@material-ui/icons/HomeOutlined';
 
 const drawerWidth = 240;
 
@@ -91,21 +92,21 @@ class MiniDrawer extends React.Component {
           }}
           open={this.state.open}
         >
-          <List >
-            <ListItem button key={'Home'} onClick={ () => this.props.message('home') }>
-                <ListItemIcon><DashboardIcon /></ListItemIcon>
+          <List disablePadding="true">
+            <ListItem className="list-item" button key={'Home'} onClick={ () => this.props.message('home') }>
+                <ListItemIcon><HomeIcon className="side-icon" fontSize='large'/></ListItemIcon>
                 <ListItemText className="side-nav-text" primary={'Home'} />
             </ListItem>
-            <ListItem button key={'Projects List'} onClick={ () => this.props.message('project_list') }>
-                <ListItemIcon><FolderIcon /></ListItemIcon>
+            <ListItem className="list-item" button key={'Projects List'} onClick={ () => this.props.message('project_list') }>
+                <ListItemIcon><FolderIcon className="side-icon" fontSize='large'/></ListItemIcon>
                 <ListItemText className="side-nav-text" primary={'Projects List'} />
             </ListItem>
-            <ListItem button key={'Projects Detail'} onClick={ () => this.props.message('project_detail') }>
-                <ListItemIcon><FolderIcon /></ListItemIcon>
+            <ListItem className="list-item" button key={'Projects Detail'} onClick={ () => this.props.message('project_detail') }>
+                <ListItemIcon><FolderIcon className="side-icon" fontSize='large'/></ListItemIcon>
                 <ListItemText className="side-nav-text" primary={'Projects Detail'} />
             </ListItem>
-            <ListItem button key={'Community'} onClick={ () => this.props.message('user_profile') }>
-                <ListItemIcon><PeopleIcon /></ListItemIcon>
+            <ListItem className="list-item" button key={'Community'} onClick={ () => this.props.message('user_profile') }>
+                <ListItemIcon><PeopleIcon className="side-icon" fontSize='large'/></ListItemIcon>
                 <ListItemText className="side-nav-text" primary={'Community'} />
             </ListItem>
           </List>

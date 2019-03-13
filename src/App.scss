@@ -13,14 +13,26 @@ button {
   border-radius: 0px !important;
   border: 2px solid #000 !important;
 }
+.MiniDrawer-drawerOpen-4 {
+  border-right: 2px solid #000 !important;
+}
+.list-item {
+  height: 80px;
+  border-bottom: 2px solid #000 !important;
+}
+.side-icon {
+  color: #000;
+}
 
 .Drawer-contain {
   background-color: #ccf;
 }
 
 .side-nav-text {
+  color: #000;
   span {
     font-family: "Merriweather";
+    font-size: 20px;
   }
 }
 
@@ -55,7 +67,8 @@ button {
     justify-content: space-between;
     .username-projectname {
       display: inline-block;
-      font-size: 24px;
+      font-size: 32px;
+      font-weight: 700;
     }
     .buttons {
       display: inline-block;
@@ -100,6 +113,7 @@ button {
       .discuss-tab {
         padding: 15px;
         margin-right: 10px;
+        background-color: #e0e0e0;
         border: 2px solid #000;
         border-bottom: none;
         &:hover {
@@ -111,6 +125,7 @@ button {
         padding: 15px;
         margin-right: 10px;
         border: 2px solid #000;
+        background-color: #e0e0e0;
         border-bottom: none;
         &:hover {
           cursor: pointer;
@@ -120,6 +135,7 @@ button {
       .graph-tab {
         padding: 15px;
         border: 2px solid #000;
+        background-color: #e0e0e0;
         border-bottom: none;
         &:hover {
           cursor: pointer;
@@ -132,7 +148,7 @@ button {
   .section-4 {
     border: 2px solid #000;
     .details-content {
-      min-height: 100vh;
+      min-height: 50vh;
     }
   }
 }
