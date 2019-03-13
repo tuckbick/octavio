@@ -182,12 +182,6 @@ class App extends Component {
                 project 1
               </div>
             </div>
-            <div className="social-item">
-              <div className="circle" />project 2
-            </div>
-            <div className="social-item">
-              <div className="circle" />project 3
-            </div>
           </div>
         </div>
       </div>
