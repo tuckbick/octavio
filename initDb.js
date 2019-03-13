@@ -54,4 +54,10 @@ module.exports = async function(server) {
     await Collaborator.insertMany(collaborators);
     await Project.insertMany(projects);
     await Event.insertMany(events);
+
+    return {
+      Collaborator,
+      Project,
+      Event
+    }
 }

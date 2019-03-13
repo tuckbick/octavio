@@ -1,9 +1,8 @@
 'use strict'
-// placeholder data
-const social_feed = require('./social_feed.json')
 
 const Hapi = require('hapi');
 const Boom = require('boom');
+const Mongoose = require('mongoose');
 const initDb = require('./initDb');
 
 const launchServer = async function() {
@@ -20,17 +19,34 @@ const launchServer = async function() {
     options: options
   });
 
-  await initDb(server);
+  const {Collaborator, Event, Project} = await initDb(server);
 
   const db = server.plugins['hapi-mongoose'].connection;
 
-  server.route({
-    method: 'GET',
-    path: '/api/socialfeed/1',
-    handler: function (request, h) {
-      return social_feed
+  server.route([
+    {
+      method: 'GET',
+      path: '/api/socialfeed',
+      handler: async function (request, h) {
+        try {
+          return await Event.find({});
+        } catch (err) {
+          throw Boom.internal('Internal MongoDB error', err);
+        }
+      }
+    },
+    {
+      method: 'GET',
+      path: '/api/socialfeed/{id}',
+      handler: async function (request, h) {
+        try {
+          return await Event.findOne({ _id: new Mongoose.Types.ObjectId(request.params.id) });
+        } catch (err) {
+          throw Boom.internal('Internal MongoDB error', err);
+        }
+      }
     }
-  })
+  ])
 
   await server.start()
 
