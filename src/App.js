@@ -244,7 +244,7 @@ class App extends Component {
       <div className="ProjectDetail-contain">
         <section className="section-1">
           <div className="title-section">
-          username / project-name
+          rmassey / rolling in the deep
           </div>
           <div className="buttons">
             <Fab size="small" aria-label="Add" className="download-button">
