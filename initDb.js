@@ -48,17 +48,20 @@ module.exports = async function(server) {
       feed_user_id: {type: Mongoose.Schema.Types.ObjectId, ref: 'Collaborator'},
       feed_action: String,
       project: {type: Mongoose.Schema.Types.ObjectId, ref: 'Project'},
+      following_user_id: {type: Mongoose.Schema.Types.ObjectId, ref: 'Collaborator'},
       followed_user: {type: Mongoose.Schema.Types.ObjectId, ref: 'Collaborator'}
     })
     EventSchema.pre('find', function(next) {
       this.populate('feed_user_id')
       this.populate('project')
+      this.populate('following_user_id')
       this.populate('followed_user')
       next();
     })
     EventSchema.pre('findOne', function(next) {
       this.populate('feed_user_id')
       this.populate('project')
+      this.populate('following_user_id')
       this.populate('followed_user')
       next();
     })
