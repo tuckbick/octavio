@@ -80,6 +80,8 @@ class App extends Component {
         this.fetchProject('5c88b0ccf20e1f22db9174d8')
       }
       return this.renderProjectDetailPage();
+    } else if (page === 'project_create') {
+      return this.renderProjectCreatePage();
     }
   }
 
@@ -215,8 +217,8 @@ class App extends Component {
             project list
           </div>
           <div className="buttons">
-            <Fab size="small" aria-label="Add">
-              <AddIcon />
+            <Fab size="small" aria-label="Add" onClick={() => this.setState({ which_page: 'project_create' }) }>
+              <AddIcon/>
             </Fab>
           </div>
         </section>
@@ -279,7 +281,7 @@ class App extends Component {
         </section>
         <section className="section-4">
           <div className="details-content">
-            
+
             <div className="social-feed">
               <div className="line-down"/>
               <div className="social-item">
@@ -319,6 +321,38 @@ class App extends Component {
     }
     this.barEls = (<div className="all-bars"> {barElems} </div>)
     return this.barEls
+  }
+
+  renderProjectCreatePage() {
+    return (
+      <div className="ProjectDetail-contain">
+        <section className="section-1">
+          <div className="title-section">
+          username / <Input
+            className=" "
+            placeholder="project name"
+            inputProps={{
+              'aria-label': 'Description',
+            }}
+          />
+          </div>
+
+          <div className="buttons">
+            <Fab size="small" aria-label="Add">
+              <AddIcon onClick={() => this.setState({ which_page: 'project_create' }) }/>
+            </Fab>
+          </div>
+        </section>
+        <section className="section-2">
+          <div className="playback-ui">
+            <Fab size="xl" aria-label="Add" className="audio-button">
+              <AddIcon />
+              Upload audio
+            </Fab>
+          </div>
+        </section>
+      </div>
+    );
   }
 
   componentDidMount() {
