@@ -21,6 +21,7 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     display: 'flex',
+    fontFamily: "Spectral"
   },
   hide: {
     display: 'none',
@@ -93,19 +94,19 @@ class MiniDrawer extends React.Component {
           <List>
             <ListItem button key={'Home'} onClick={ () => this.props.message('home') }>
                 <ListItemIcon><DashboardIcon /></ListItemIcon>
-                <ListItemText primary={'Home'} />
+                <ListItemText className="side-nav-text" primary={'Home'} />
             </ListItem>
             <ListItem button key={'Projects List'} onClick={ () => this.props.message('project_list') }>
                 <ListItemIcon><FolderIcon /></ListItemIcon>
-                <ListItemText primary={'Projects List'} />
+                <ListItemText className="side-nav-text" primary={'Projects List'} />
             </ListItem>
             <ListItem button key={'Projects Detail'} onClick={ () => this.props.message('project_detail') }>
                 <ListItemIcon><FolderIcon /></ListItemIcon>
-                <ListItemText primary={'Projects Detail'} />
+                <ListItemText className="side-nav-text" primary={'Projects Detail'} />
             </ListItem>
             <ListItem button key={'Community'} onClick={ () => this.props.message('user_profile') }>
                 <ListItemIcon><PeopleIcon /></ListItemIcon>
-                <ListItemText primary={'Community'} />
+                <ListItemText className="side-nav-text" primary={'Community'} />
             </ListItem>
           </List>
         </Drawer>
