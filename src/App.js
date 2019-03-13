@@ -105,10 +105,22 @@ class App extends Component {
           </div>
         </section>
         <section className="section-3">
-          discussion collaborators graph
+          <div className="tabs">
+            <div className="discuss-tab">
+              discussion
+            </div>
+            <div className="collab-tab">
+              collaborators
+            </div>
+            <div className="graph-tab">
+              graph
+            </div>
+          </div>
         </section>
         <section className="section-4">
-          discussion discussion discussion 
+          <div className="details-content">
+            discussion content
+          </div>
         </section>
       </div>
     );
@@ -117,7 +129,12 @@ class App extends Component {
   displayBars() {
     let barElems = [];
     for (var i = 0; i < 100; i++) {
-      barElems.push(<div className="single-bar"></div>);
+      let heightComputed = Math.floor(Math.random() * 35) + 25;
+      if (i === 0 || i === 100) {
+        heightComputed = 20;
+      }
+      let style = { height: heightComputed };
+      barElems.push(<div style={style} className="single-bar"></div>);
     }
     return (<div className="all-bars"> {barElems} </div>)
   }
