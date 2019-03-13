@@ -15,6 +15,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
+import Canvas from './Canvas';
 
 const drawerWidth = 240;
 
@@ -95,6 +96,7 @@ class MiniDrawer extends React.Component {
             <ListItem className="list-item" button key={'Home'} onClick={ () => this.props.message('home') }>
                 <ListItemIcon><HomeIcon className="side-icon" fontSize='large'/></ListItemIcon>
                 <ListItemText className="side-nav-text" primary={'home'} />
+                <div className="back-back"/>
             </ListItem>
             <ListItem className="list-item" button key={'Projects'} onClick={ () => this.props.message('project_list') }>
                 <ListItemIcon><FolderIcon className="side-icon" fontSize='large'/></ListItemIcon>

@@ -1,4 +1,5 @@
 $primary-color: #fff;
+$polka-color: #ffa0c5;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather";
@@ -27,6 +28,14 @@ button {
 .list-item {
   height: 80px;
   border-bottom: 2px solid #000 !important;
+  &:hover {
+    background-color: #fff !important;
+    background-image:
+          radial-gradient($polka-color 25%, transparent 0), 
+          radial-gradient($polka-color 25%, transparent 0);
+        background-size: 4px 4px;
+        background-position: 0 0, 15px 15px;
+  }
 }
 .hidden {
   visibility: hidden;
@@ -174,10 +183,12 @@ button {
       .social-text {
       }
       &:hover {
-        cursor: pointer;
-        background-color: #ccc;
-        // border: 2px solid #000;
-        .circle { background-color: #ccc; }
+        background-color: #fff !important;
+        background-image:
+          radial-gradient($polka-color 25%, transparent 0), 
+          radial-gradient($polka-color 25%, transparent 0);
+        background-size: 4px 4px;
+        background-position: 0 0, 15px 15px;
       }
     }
   }
