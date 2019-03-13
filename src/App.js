@@ -10,6 +10,7 @@ import StarIcon from '@material-ui/icons/StarBorder';
 import Button from '@material-ui/core/Button';
 import PlayArrowIcon from '@material-ui/icons/PlayArrowOutlined';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
+import Avatar from './Avatar';
 
 class App extends Component {
   constructor() {
@@ -44,6 +45,7 @@ class App extends Component {
 
   renderPage(page) {
     if (page === 'home') {
+      this.fetchEvents();
       return this.renderHomePage();
     } else if (page === 'user_profile') {
       return this.renderUserProfilePage();
@@ -52,6 +54,41 @@ class App extends Component {
     } else if (page === 'project_detail') {
       return this.renderProjectDetailPage();
     }
+  }
+
+  getEventsMarkup() {
+    return this.state.which_data.map((event) => {
+      let eventText = '';
+      const {feed_action, feed_user_id, following_user_id, followed_user, project} = event;
+      if (feed_user_id) {
+        eventText = `${feed_user_id.first_name} ${feed_user_id.last_name} ${feed_action} ${project.name}`;
+        eventText = (
+          <span>
+            <Avatar name={`${feed_user_id.first_name} ${feed_user_id.last_name}`} src={feed_user_id.picture} />
+            <strong>{`${feed_user_id.first_name} ${feed_user_id.last_name}`}</strong>
+            {` ${feed_action} `}
+            <strong>{project.name}</strong>
+          </span>
+        )
+      } else if (following_user_id) {
+        eventText = (
+          <span>
+            <Avatar name={`${following_user_id.first_name} ${following_user_id.last_name}`} src={following_user_id.picture} />
+            <strong>{`${following_user_id.first_name} ${following_user_id.last_name}`}</strong>
+            {` ${feed_action} `}
+            <strong>{`${followed_user.first_name} ${followed_user.last_name}`}</strong>
+          </span>
+        )
+      }
+      return (
+        <div className="social-item">
+          <div className="circle" />
+          <div class="social-text">
+            { eventText }
+          </div>
+        </div>
+      )
+    })
   }
 
   renderHomePage() {
@@ -63,18 +100,7 @@ class App extends Component {
         <div className="details-content">
           <div className="social-feed">
             <div className="line-down"/>
-            <div className="social-item">
-              <div className="circle" />
-              <div class="social-text">
-                Someone followed Someone Else
-              </div>
-            </div>
-            <div className="social-item">
-              <div className="circle" />Someone starred This Project
-            </div>
-            <div className="social-item">
-              <div className="circle" />Someone contributed to This Project
-            </div>
+            { this.getEventsMarkup() }
           </div>
         </div>
       </div>
