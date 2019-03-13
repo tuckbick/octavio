@@ -15,7 +15,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrowOutlined';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
 import Input from '@material-ui/core/Input';
 import Avatar from './Avatar';
-import ProjectAvatar from './ProjectAvatar';
+import ProjectAvatar from './CommunityAvatar';
 
 class App extends Component {
   constructor() {
@@ -187,7 +187,7 @@ class App extends Component {
     return (
       <div className="section-1">
         <div className="title-section">
-          user profile
+          community
         </div>
           <div className="details-content">
             <div className="social-feed">
@@ -195,14 +195,56 @@ class App extends Component {
               <div className="social-item">
                 <div className="circle" />
                 <div className="social-text">
-                  user 1
+                  <span>
+                    <Avatar src={'https://randomuser.me/api/portraits/men/81.jpg'} />
+                    {'Murphy Nolan'}
+                  </span>
                 </div>
               </div>
               <div className="social-item">
-                <div className="circle" />user 2
+                <div className="circle" />
+                <div className="social-text">
+                  <span>
+                    <Avatar src={'https://randomuser.me/api/portraits/women/73.jpg'} />
+                    {'Jessica Lange'}
+                  </span>
+                </div>
               </div>
               <div className="social-item">
-                <div className="circle" />user 3
+                <div className="circle" />
+                <div className="social-text">
+                  <span>
+                    <Avatar src={'https://randomuser.me/api/portraits/men/42.jpg'} />
+                    {'Jerome Martinez'}
+                  </span>
+                </div>
+              </div>
+              <div className="social-item">
+                <div className="circle" />
+                <div className="social-text">
+                  <span>
+                    <Avatar src={'https://randomuser.me/api/portraits/men/82.jpg'} />
+                    {'James Kim'}
+                  </span>
+                </div>
+              </div>
+              <div className="social-item">
+                <div className="circle" />
+                <div className="social-text">
+                  <span>
+                    <Avatar src={'https://randomuser.me/api/portraits/women/74.jpg'} />
+                    {'Sarah Parker'}
+                  </span>
+                </div>
+              </div>
+              <div className="social-item">
+                <div className="circle" />
+                <div className="social-text">
+                  <span>
+                    <Avatar src={'https://randomuser.me/api/portraits/men/43.jpg'} />
+                    {'Tucker Bickler'}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -326,7 +368,7 @@ class App extends Component {
               collaborators
             </div>
             <div className="graph-tab">
-              graph
+              derivatives graph
             </div>
           </div>
         </section>
