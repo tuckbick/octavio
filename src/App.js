@@ -22,8 +22,10 @@ class App extends Component {
     return (
       <div className="App">
         <Drawer message={this.whichPage} theme={this.props.theme} />
-        <div className="Content-container">
-          { this.renderPage(this.state.which_page) }
+        <div className="App-Content">
+          <div className="content-container">
+            { this.renderPage(this.state.which_page) }
+          </div>
         </div>
       </div>
     );
@@ -67,15 +69,26 @@ class App extends Component {
 
   renderProjectDetailPage() {
     return (
-      <div>
-        this is project detail page
+      <div className="ProjectDetail-contain">
+        <section className="section-1">
+          username / project-name download stem
+        </section>
+        <section className="section-2">
+          playback ui
+        </section>
+        <section className="section-3">
+          discussion collaborators graph
+        </section>
+        <section className="section-4">
+          discussion discussion discussion 
+        </section>
       </div>
     );
   }
 
   // fetch all social feed data
   componentDidMount() {
-    const url = 'api/socialfeed/1';
+    const url = 'api/socialfeed';
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
