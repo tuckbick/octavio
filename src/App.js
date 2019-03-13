@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import StarIcon from '@material-ui/icons/StarBorder';
+import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import PlayArrowIcon from '@material-ui/icons/PlayArrowOutlined';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
@@ -25,6 +26,10 @@ class App extends Component {
       project_id: 1,
       ui_state: {
         is_logged_in: false,
+      },
+      project_details: {
+        tab: 'discussion',
+        data: ['hisotry item 1', 'hisotry item 2', 'hisotry item 3']
       }
     }
     this.whichPage = this.whichPage.bind(this)
@@ -196,22 +201,31 @@ class App extends Component {
 
   renderProjectsListPage() {
     return (
-      <div className="section-1">
-        <div className="title-section">
-          project list
-        </div>
-        <div className="details-content">
-          <div className="social-feed">
-            <div className="line-down"/>
-            <div className="social-item">
-              <div className="circle" />
-              <div className="social-text">
-                project 1
+      <div className="ProjectDetail-contain">
+        <section className="section-1">
+          <div className="title-section">
+            project list
+          </div>
+          <div className="buttons">
+            <Fab size="small" aria-label="Add">
+              <AddIcon />
+            </Fab>
+          </div>
+        </section>
+        <section className="section-4">
+          <div className="details-content">
+            <div className="social-feed">
+              <div className="line-down"/>
+              <div className="social-item">
+                <div className="circle" />
+                <div className="social-text">
+                  project 1
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+       </div>
     );
   }
 
@@ -257,21 +271,24 @@ class App extends Component {
         </section>
         <section className="section-4">
           <div className="details-content">
+            
             <div className="social-feed">
               <div className="line-down"/>
               <div className="social-item">
-                <div className="circle" />
-                <div className="social-text">
-                  hisotry item 1
-                </div>
+                <div className="circle" /><span><strong>Murphy Nolan</strong> added a file</span>
               </div>
               <div className="social-item">
-                <div className="circle" />history item 2
+                <div className="circle" /><span><strong>Roxie Massey</strong> added a file</span>
               </div>
               <div className="social-item">
-                <div className="circle" />history item 3
+                <div className="circle" /><span><strong>Roxie Massey</strong> made a comment:</span>
+                <p>&nbsp;<i>wow this is great!</i></p>
+              </div>
+              <div className="social-item">
+                <div className="circle" /><span><strong>Roxie Massey</strong> added a file</span>
               </div>
             </div>
+
           </div>
         </section>
       </div>
