@@ -4,8 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:8080",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuckbick/octavio.git"
@@ -17,7 +27,7 @@
   },
   "homepage": "https://github.com/tuckbick/octavio#readme",
   "devDependencies": {
-    "eslint": "^5.15.1",
+    "eslint": "5.12.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
@@ -26,8 +36,9 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
-    "handlebars": "^4.1.0",
     "hapi": "^18.1.0",
-    "vision": "^5.4.4"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8"
   }
 }
