@@ -20,6 +20,33 @@ button {
   height: 80px;
   border-bottom: 2px solid #000 !important;
 }
+.hidden {
+  visibility: hidden;
+}
+.login-input {
+  border-bottom: 2px solid #000 !important;
+  font-family: "Merriweather" !important;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.login-button {
+  width: 200px !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+  border: 2px solid #000 !important;
+  background-color: #ccc !important;
+  text-transform: lowercase !important;
+}
+.upload-picture-button {
+  width: 200px !important;
+  margin-bottom: 20px !important;
+  background-color: #ccc !important;
+  text-transform: lowercase !important;
+  border: 2px solid #000 !important;
+  border-radius: 0px !important; 
+  font-size: 14px;
+  width: 100%;
+}
 .side-icon {
   color: #000;
 }
@@ -51,6 +78,45 @@ button {
     margin-left: 100px;
     margin-right: 100px;
     // background-color: #fcf; 
+  }
+}
+
+.Login-Page {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1500;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .Login-Form {
+    width: 370px;
+    height: 520px;
+    border: 2px solid #000;
+    .logo {
+      display: flex;
+      align-items: center;
+      .logo-img {
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+    }
+    .logo-name {
+      align-items: center;
+      text-align: center;
+      position: relative;
+      top: -20px;
+    }
+    .form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
   }
 }
 
