@@ -64,13 +64,21 @@ class App extends Component {
     if (page === 'login') {
       return this.renderLoginPage();
     } else if (page === 'home') {
-      this.fetchEvents();
+      if (!this.isLoading) {
+        this.fetchEvents();
+      }
       return this.renderHomePage();
     } else if (page === 'user_profile') {
+      if (this.isLoading) {
+        this.fetchUserProfile('5c88b09a48cb84a541b9f917');
+      }
       return this.renderUserProfilePage();
     } else if (page === 'project_list') {
       return this.renderProjectsListPage();
     } else if (page === 'project_detail') {
+      if (!this.isLoading) {
+        this.fetchProject('5c88b0ccf20e1f22db9174d8')
+      }
       return this.renderProjectDetailPage();
     }
   }
@@ -82,7 +90,7 @@ class App extends Component {
       <div style={style} id="Login-Page" className="Login-Page">
         <div className="Login-Form">
           <div className="logo">
-            <img className="logo-img" src={LogoImage} height={100} width={100} />
+            <img alt={'Octavio logo'} className="logo-img" src={LogoImage} height={100} width={100} />
           </div>
           <h1 className="logo-name">octavio</h1>
           <div className="form">
@@ -279,6 +287,7 @@ class App extends Component {
               </div>
               <div className="social-item">
                 <div className="circle" /><span><strong>Roxie Massey</strong> added a file</span>
+
               </div>
               <div className="social-item">
                 <div className="circle" /><span><strong>Roxie Massey</strong> made a comment:</span>
@@ -296,6 +305,9 @@ class App extends Component {
   }
 
   displayBars() {
+    if (this.barEls) {
+      return this.barEls;
+    }
     let barElems = [];
     for (var i = 0; i < 300; i++) {
       let heightComputed = Math.floor(Math.random() * 35) + 25;
@@ -305,73 +317,76 @@ class App extends Component {
       let style = { height: heightComputed };
       barElems.push(<div style={style} className="single-bar"></div>);
     }
-    return (<div className="all-bars"> {barElems} </div>)
+    this.barEls = (<div className="all-bars"> {barElems} </div>)
+    return this.barEls
   }
 
-  // fetch all social feed data
   componentDidMount() {
-    const url = 'api/events';
-    fetch(url)
-    .then(response =>  response.json())
-    .then((data) => {
-        let social_feed = data;
-        console.log("FETCH social feed", social_feed);
-        this.setState({which_data: social_feed});
-    });
+
   }
 
   fetchEvents(user_id) {
     const url = 'api/events';
+    this.isLoading = true;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
         let social_feed = data;
         console.log("FETCH social feed", social_feed);
         this.setState({which_data: social_feed});
+        this.isLoading = false;
     });
   }
 
   fetchCollaborators(project_id) {
     const url = `api/projects/${project_id}`;
+    this.isLoading = true;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
         let social_feed = data;
         console.log("FETCH social feed", social_feed);
         this.setState({which_data: social_feed});
+        this.isLoading = false;
     });
   }
 
   fetchProject(project_id) {
     const url = 'api/events';
+    this.isLoading = true;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
         let social_feed = data;
         console.log("FETCH social feed", social_feed);
         this.setState({which_data: social_feed});
+        this.isLoading = false;
     });
   }
 
   fetchProjectList(user_id) {
     const url = `api/projects?collaborators=${user_id}`;
+    this.isLoading = true;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
         let social_feed = data;
         console.log("FETCH social feed", social_feed);
         this.setState({which_data: social_feed});
+        this.isLoading = false;
     });
   }
 
   fetchUserProfile(user_id) {
     const url = `api/collaborators/${user_id}`;
+    this.isLoading = true;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
         let social_feed = data;
         console.log("FETCH social feed", social_feed);
         this.setState({which_data: social_feed});
+        this.isLoading = false;
     });
   }
 }
