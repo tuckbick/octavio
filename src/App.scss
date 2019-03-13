@@ -71,7 +71,7 @@ button {
   background-color: #ccc !important;
   text-transform: lowercase !important;
   border: 2px solid #000 !important;
-  border-radius: 0px !important; 
+  border-radius: 0px !important;
   font-size: 14px;
   width: 100%;
 }
@@ -223,6 +223,14 @@ button {
   }
 }
 
+.ProjectList-contain {
+  .social-feed .social-item {
+    padding: 10px 0;
+    height: auto;
+    margin: 0;
+  }
+}
+
 .ProjectDetail-contain {
   .section-1 {
     display: flex;
@@ -251,6 +259,10 @@ button {
       align-items: center;
       .play-button {
         width: 80px;
+        flex-grow: 1;
+      }
+      .audio-button {
+        width: 200px;
         flex-grow: 1;
       }
       .all-bars {

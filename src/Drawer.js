@@ -98,13 +98,9 @@ class MiniDrawer extends React.Component {
                 <ListItemText className="side-nav-text" primary={'home'} />
                 <div className="back-back"/>
             </ListItem>
-            <ListItem className="list-item" button key={'Projects List'} onClick={ () => this.props.message('project_list') }>
+            <ListItem className="list-item" button key={'Projects'} onClick={ () => this.props.message('project_list') }>
                 <ListItemIcon><FolderIcon className="side-icon" fontSize='large'/></ListItemIcon>
-                <ListItemText className="side-nav-text" primary={'projects list'} />
-            </ListItem>
-            <ListItem className="list-item" button key={'Projects Detail'} onClick={ () => this.props.message('project_detail') }>
-                <ListItemIcon><FolderIcon className="side-icon" fontSize='large'/></ListItemIcon>
-                <ListItemText className="side-nav-text" primary={'projects detail'} />
+                <ListItemText className="side-nav-text" primary={'projects'} />
             </ListItem>
             <ListItem className="list-item" button key={'Community'} onClick={ () => this.props.message('user_profile') }>
                 <ListItemIcon><PeopleIcon className="side-icon" fontSize='large'/></ListItemIcon>
