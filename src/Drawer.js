@@ -91,7 +91,7 @@ class MiniDrawer extends React.Component {
           }}
           open={this.state.open}
         >
-          <List>
+          <List >
             <ListItem button key={'Home'} onClick={ () => this.props.message('home') }>
                 <ListItemIcon><DashboardIcon /></ListItemIcon>
                 <ListItemText className="side-nav-text" primary={'Home'} />
@@ -111,7 +111,6 @@ class MiniDrawer extends React.Component {
           </List>
         </Drawer>
         <main className={classes.content}>
-
         </main>
       </div>
     );
