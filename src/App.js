@@ -180,7 +180,7 @@ class App extends Component {
   }
 
   fetchCollaborators(project_id) {
-    const url = 'api/events';
+    const url = `api/projects/${project_id}`;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
@@ -202,7 +202,7 @@ class App extends Component {
   }
 
   fetchProjectList(user_id) {
-    const url = 'api/events';
+    const url = `api/projects?collaborators=${user_id}`;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
@@ -213,7 +213,7 @@ class App extends Component {
   }
 
   fetchUserProfile(user_id) {
-    const url = 'api/events';
+    const url = `api/collaborators/${user_id}`;
     fetch(url)
     .then(response =>  response.json())
     .then((data) => {
