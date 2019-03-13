@@ -294,7 +294,7 @@ class App extends Component {
       <div className="ProjectDetail-contain">
         <section className="section-1">
           <div className="title-section">
-          aadkins / rolling in the deep
+          mgoodman / rolling in the deep
           </div>
           <div className="buttons">
             <Fab size="small" aria-label="Add" className="download-button">
@@ -335,18 +335,35 @@ class App extends Component {
             <div className="social-feed">
               <div className="line-down"/>
               <div className="social-item">
+                <div className="circle" /><span><strong>Melinda Goodman</strong> edited <strong>lyrics</strong>:</span>
+                <p>
+                  <pre>&nbsp;&nbsp;- There's a fire burning in my heart</pre>
+                  <pre>&nbsp;&nbsp;+ There's a fire starting in my heart</pre>
+                </p>
+              </div>
+              <div className="social-item">
                 <div className="circle" /><span><strong>Murphy Nolan</strong> added a <strong>file</strong></span>
               </div>
               <div className="social-item">
                 <div className="circle" /><span><strong>Roxie Massey</strong> added a <strong>file</strong></span>
-
               </div>
               <div className="social-item">
-                <div className="circle" /><span><strong>Roxie Massey</strong> made a <strong>comment</strong>:</span>
-                <p>&nbsp;<i>wow this is great!</i></p>
+                <div className="circle" /><span><strong>Melinda Goodman</strong> made a <strong>comment</strong>:</span>
+                <p>&nbsp;<i>@Roxie - Could you fade the drums out a bit quicker at the end?</i></p>
+              </div>
+              <div className="social-item">
+                <div className="circle" /><span><strong>Melinda Goodman</strong> edited <strong>lyrics</strong>:</span>
+                <p>
+                  <pre>&nbsp;&nbsp;- You could have had it all</pre>
+                  <pre>&nbsp;&nbsp;+ We could've had it all</pre>
+                </p>
               </div>
               <div className="social-item">
                 <div className="circle" /><span><strong>Roxie Massey</strong> added a <strong>file</strong></span>
+              </div>
+              <div className="social-item">
+                <div className="circle" /><span><strong>Redfoo</strong> made a <strong>comment</strong>:</span>
+                <p>&nbsp;<i>Needs more party rock </i></p>
               </div>
             </div>
 
