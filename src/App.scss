@@ -76,9 +76,16 @@ button {
       display: flex;
       align-items: center;
       .all-bars {
-        width: 100px;
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+
+        flex-direction: row;
+        width: 100%;
         .single-bar {
-          
+          margin: 2px;
+          width: 3px;
+          background-color: #000;
         }
       }
       padding: 20px;

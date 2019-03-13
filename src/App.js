@@ -117,7 +117,12 @@ class App extends Component {
   displayBars() {
     let barElems = [];
     for (var i = 0; i < 100; i++) {
-      barElems.push(<div className="single-bar"></div>);
+      let heightComputed = Math.floor(Math.random() * 50) + 30;
+      if (i === 0 || i === 100) {
+        heightComputed = 20;
+      }
+      let style = { height: heightComputed };
+      barElems.push(<div style={style} className="single-bar"></div>);
     }
     return (<div className="all-bars"> {barElems} </div>)
   }
