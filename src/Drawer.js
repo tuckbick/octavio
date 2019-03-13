@@ -56,7 +56,7 @@ const styles = theme => ({
 
 class MiniDrawer extends React.Component {
   state = {
-    open: false,
+    open: true,
   };
 
   handleDrawerOpen = () => {
@@ -75,8 +75,6 @@ class MiniDrawer extends React.Component {
         <Drawer
           variant="permanent"
           theme={theme}
-          onMouseEnter={this.handleDrawerOpen}
-          onMouseLeave={this.handleDrawerClose}
           className={classNames(classes.drawer, {
             [classes.drawerOpen]: this.state.open,
             [classes.drawerClose]: !this.state.open,
