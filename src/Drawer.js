@@ -5,7 +5,6 @@ import { withStyles, withTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import FolderIcon from '@material-ui/icons/FolderSpecialOutlined';
 import PeopleIcon from '@material-ui/icons/PeopleOutlined';

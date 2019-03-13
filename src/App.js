@@ -110,24 +110,37 @@ class App extends Component {
 
   renderProjectsListPage() {
     return (
-      <div class="section-1">
-        <div className="title-section">
-          project list
-        </div>
-        <div className="details-content">
-          <div className="social-feed">
-            <div className="line-down"/>
-            <div className="social-item">
-              <div className="circle" />
-              <div class="social-text">
-                project 1
+      <div className="ProjectList-contain">
+        <div class="section-1">
+          <div className="title-section">
+            project list
+          </div>
+          <div className="buttons">
+            <Fab size="small" aria-label="Add" className="download-button">
+              <SaveAltIcon />
+            </Fab>
+            <Fab size="small" aria-label="Add" className="download-button">
+              <RepeatIcon />
+            </Fab>
+            <Fab size="small" aria-label="Add">
+              <StarIcon />
+            </Fab>
+          </div>
+          <div className="details-content">
+            <div className="social-feed">
+              <div className="line-down"/>
+              <div className="social-item">
+                <div className="circle" />
+                <div class="social-text">
+                  project 1
+                </div>
               </div>
-            </div>
-            <div className="social-item">
-              <div className="circle" />project 2
-            </div>
-            <div className="social-item">
-              <div className="circle" />project 3
+              <div className="social-item">
+                <div className="circle" />project 2
+              </div>
+              <div className="social-item">
+                <div className="circle" />project 3
+              </div>
             </div>
           </div>
         </div>
