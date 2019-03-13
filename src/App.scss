@@ -19,6 +19,34 @@ button {
 .list-item {
   height: 80px;
   border-bottom: 2px solid #000 !important;
+  &:hover {
+    background-color: #fff !important;
+    background-image:
+      radial-gradient(#f9aa33 20%, transparent 0), 
+      radial-gradient(#f9aa33 20%, transparent 0);
+    background-size: 5px 5px;
+    background-position: 0 0, 15px 15px;
+
+    -webkit-animation: AnimationName 25s ease infinite;
+    -moz-animation: AnimationName 25s ease infinite;
+    animation: AnimationName 25s ease infinite;
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 25%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName { 
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+  }
 }
 .hidden {
   visibility: hidden;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Drawer from './Drawer';
+import Canvas from './Canvas';
 import './App.scss';
 import LogoImage from './logo.png';
 
