@@ -56,24 +56,40 @@ class App extends Component {
 
   renderHomePage() {
     return (
-      <div>
-        this is home social feed
+      <div class="section-1">
+        <div className="title-section">
+          social feed
+        </div>
+        <div className="details-content">
+          discussion content
+        </div>
       </div>
     );
   }
 
   renderUserProfilePage() {
     return (
-      <div>
-        this is user profile page
+      <div class="section-1">
+        <div className="title-section">
+          user profile
+        </div>
       </div>
     );
   }
 
   renderProjectsListPage() {
     return (
-      <div>
-        this is projects list page
+      <div class="section-1">
+        <div className="title-section">
+          project list
+        </div>
+        <div className="details-content">
+          <ul>
+          <li>project 1</li>
+          <li>project 2</li>
+          <li>project 3</li>
+          </ul>
+        </div>
       </div>
     );
   }
@@ -82,7 +98,7 @@ class App extends Component {
     return (
       <div className="ProjectDetail-contain">
         <section className="section-1">
-          <div className="username-projectname">
+          <div className="title-section">
           username / project-name
           </div>
           <div className="buttons">
@@ -100,7 +116,7 @@ class App extends Component {
         <section className="section-2">
           <div className="playback-ui">
             <Fab size="xl" color="primary" aria-label="Add" className="play-button">
-              <PlayArrowIcon />
+              <PlayArrowIcon fontSize="large" />
             </Fab>
             { this.displayBars() }
           </div>

@@ -23,11 +23,6 @@ button {
 .side-icon {
   color: #000;
 }
-
-.Drawer-contain {
-  background-color: #ccf;
-}
-
 .side-nav-text {
   color: #000;
   span {
@@ -58,18 +53,29 @@ button {
   }
 }
 
+.section-1 {
+  height: 120px;
+  .title-section {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+.details-content {
+  border: 2px solid #000;
+  min-height: 50vh;
+  padding: 20px;
+}
+
 .ProjectDetail-contain {
   .section-1 {
     display: flex;
     align-items: center;
     height: 120px;
-    // background-color: #ccf;
     justify-content: space-between;
-    .username-projectname {
-      display: inline-block;
-      font-size: 32px;
-      font-weight: 700;
-    }
+
     .buttons {
       display: inline-block;
       .download-button {
@@ -145,10 +151,5 @@ button {
     }
     // background-color: #cfc;
   }
-  .section-4 {
-    border: 2px solid #000;
-    .details-content {
-      min-height: 50vh;
-    }
-  }
+  .section-4 {}
 }
