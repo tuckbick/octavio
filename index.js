@@ -7,8 +7,7 @@ const launchServer = async function() {
   const server = Hapi.server({ port: 8080 });
   const options = {
     promises: 'native',
-    uri: `mongodb+srv://erickflores:4F$o1h4MFOp4@cluster0-diryt.mongodb.net/test?retryWrites=true`,
-    // uri: 'mongodb://localhost:27017/test?retryWrites=true',
+    uri: 'mongodb://localhost:27017/test?retryWrites=true',
     mongooseOptions: { useNewUrlParser: true }
   };
 
